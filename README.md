@@ -138,7 +138,7 @@ DAY001/
 └── README.md            # This file
 ```
 
-## Key Code Sections
+## Key Code Section
 
 ### 1. Main Function (`main.rs`)
 ```rust
