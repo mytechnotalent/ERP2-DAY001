@@ -7,21 +7,25 @@ VIDEO PROMO [HERE](https://www.youtube.com/watch?v=aD7X9sXirF8)
 
 # DAY001: Blink a Single LED ⭐
 
+<br>
+
 **Difficulty**: Beginner  
 **Date**: Day 1 of 365  
 **Components**: LED, Resistor  
 **Concepts**: GPIO, Digital Output, Async Programming
 
-## 🔋 Schematic
+<br>
+
+# 🔋 Schematic
 ![image](https://github.com/mytechnotalent/Embedded-Hacking/blob/main/EHP2_bb.png?raw=true)
 
----
+<br>
 
-## 📋 Project Overview
+# 📋 Project Overview
 
 This is the first project in the **365 Pico2 RP2350 Project Ideas** series. We're implementing the classic "Hello World" of embedded systems: blinking an LED. This simple project introduces you to Embassy Rust on the Raspberry Pi Pico 2 and establishes the foundation for all future projects.
 
-### What You'll Learn
+## What You'll Learn
 
 - Setting up an Embassy Rust project for RP2350
 - Configuring GPIO pins as digital outputs
@@ -30,21 +34,21 @@ This is the first project in the **365 Pico2 RP2350 Project Ideas** series. We'r
 - Using defmt for efficient embedded logging
 - Working with probe-rs for flashing and debugging
 
----
+<br>
 
-## 🧩 Hardware
-### Raspberry Pi Pico 2 w/ Header [BUY](https://www.pishop.us/product/raspberry-pi-pico-2-with-header)
-### USB A-Male to USB Micro-B Cable [BUY](https://www.pishop.us/product/usb-a-male-to-usb-micro-b-cable-6-inches)
-### Raspberry Pi Pico Debug Probe [BUY](https://www.pishop.us/product/raspberry-pi-debug-probe)
-### Complete Component Kit for Raspberry Pi [BUY](https://www.pishop.us/product/complete-component-kit-for-raspberry-pi)
-### 10pc 25v 1000uF Capacitor [BUY](https://www.amazon.com/Cionyce-Capacitor-Electrolytic-CapacitorsMicrowave/dp/B0B63CCQ2N?th=1)
-#### 10% PiShop DISCOUNT CODE - KVPE_HS320548_10PC
+# 🧩 Hardware
+## Raspberry Pi Pico 2 w/ Header [BUY](https://www.pishop.us/product/raspberry-pi-pico-2-with-header)
+## USB A-Male to USB Micro-B Cable [BUY](https://www.pishop.us/product/usb-a-male-to-usb-micro-b-cable-6-inches)
+## Raspberry Pi Pico Debug Probe [BUY](https://www.pishop.us/product/raspberry-pi-debug-probe)
+## Complete Component Kit for Raspberry Pi [BUY](https://www.pishop.us/product/complete-component-kit-for-raspberry-pi)
+## 10pc 25v 1000uF Capacitor [BUY](https://www.amazon.com/Cionyce-Capacitor-Electrolytic-CapacitorsMicrowave/dp/B0B63CCQ2N?th=1)
+### 10% PiShop DISCOUNT CODE - KVPE_HS320548_10PC
 
----
+<br>
 
-## 🔌 Hardware Requirements
+# 🔌 Hardware Requirements
 
-### Components Needed
+## Components Needed
 
 | Quantity | Component                    | Notes                                 |
 | -------- | ---------------------------- | ------------------------------------- |
@@ -54,7 +58,7 @@ This is the first project in the **365 Pico2 RP2350 Project Ideas** series. We'r
 | 1        | Breadboard                   | For prototyping                       |
 | 2        | Jumper Wires                 | Male-to-Male                          |
 
-### Wiring Diagram
+## Wiring Diagram
 
 ```
 ┌─────────────────────────┐
@@ -83,17 +87,17 @@ Note: The Pico 2 has a built-in LED on GP16, so you can skip
       the external circuit initially and just run the code!
 ```
 
-### Pin Information
+## Pin Information
 
 - **GP16**: Built-in LED on Pico 2 (perfect for testing)
 - **GP15**: Alternative GPIO pin for external LED
 - **GND**: Ground connection (any GND pin works)
 
----
+<br>
 
-## 🛠️ Software Requirements
+# 🛠️ Software Requirements
 
-### Prerequisites
+## Prerequisites
 
 1. **Rust Toolchain**
    ```bash
@@ -115,7 +119,7 @@ Note: The Pico 2 has a built-in LED on GP16, so you can skip
    cargo install flip-link
    ```
 
-### Dependencies
+## Dependencies
 
 All dependencies are specified in `Cargo.toml`:
 
@@ -129,11 +133,11 @@ All dependencies are specified in `Cargo.toml`:
 
 > **Important Note**: We're using git versions of the Embassy framework because the crates.io releases don't yet have full RP2350 support. The RP2350 uses ARMv8-M architecture with different MPU registers than earlier chips. We specifically enable the `rp235xa` feature for Pico 2 (RP2350-A revision) and `critical-section-impl` for proper interrupt handling.
 
----
+<br>
 
-## 📝 Code Structure
+# 📝 Code Structure
 
-### Project Files
+## Project Files
 
 ```
 DAY001/
@@ -147,9 +151,9 @@ DAY001/
 └── README.md            # This file
 ```
 
-### Key Code Sections
+## Key Code Sections
 
-#### 1. Main Function
+### 1. Main Function
 
 ```rust
 #[embassy_executor::main]
@@ -176,31 +180,31 @@ async fn main(_spawner: Spawner) {
 - `led.set_low()`: Sets pin to 0V (LED off)
 - `Timer::after_millis()`: Async delay that doesn't block
 
-#### 2. Memory Configuration (`memory.x`)
+### 2. Memory Configuration (`memory.x`)
 
 Defines the RP2350's memory regions:
 - **BOOT2** (256 bytes): Second-stage bootloader
 - **FLASH** (4MB): Program storage
 - **RAM** (520KB): Runtime memory
 
-#### 3. Build Configuration (`.cargo/config.toml`)
+### 3. Build Configuration (`.cargo/config.toml`)
 
 - Target: `thumbv8m.main-none-eabihf` (ARMv8-M for RP2350)
 - Runner: `probe-rs run --chip RP2350`
 - Linker: `flip-link` for stack protection
 
----
+<br>
 
-## 🚀 Building and Flashing
+# 🚀 Building and Flashing
 
-### Step 1: Connect the Pico 2
+## Step 1: Connect the Pico 2
 
 1. Hold the **BOOTSEL** button on the Pico 2
 2. Connect the Pico to your computer via USB
 3. Release the BOOTSEL button
 4. The Pico appears as a USB drive (RPI-RP2)
 
-### Step 2: Build the Project
+## Step 2: Build the Project
 
 ```bash
 cd DAY001
@@ -209,7 +213,7 @@ cargo build --release
 
 This compiles the code for the RP2350 target.
 
-### Step 3: Flash and Run
+## Step 3: Flash and Run
 
 ```bash
 cargo run --release
@@ -220,7 +224,7 @@ This will:
 2. Flash it to the Pico 2 using probe-rs
 3. Start RTT logging to show debug output
 
-### Expected Output
+## Expected Output
 
 You should see in your terminal:
 
@@ -238,9 +242,9 @@ INFO  LED OFF
 
 And the LED will blink: ON for 1 second, OFF for 1 second, repeating forever.
 
----
+<br>
 
-## 🔧 Troubleshooting
+# 🔧 Troubleshooting
 
 ### Issue: `probe-rs` not found
 
@@ -249,7 +253,7 @@ And the LED will blink: ON for 1 second, OFF for 1 second, repeating forever.
 cargo install probe-rs-tools --locked
 ```
 
-### Issue: Can't find device
+## Issue: Can't find device
 
 **Solution**: 
 1. Ensure BOOTSEL was pressed during connection
@@ -259,14 +263,14 @@ cargo install probe-rs-tools --locked
    sudo usermod -a -G plugdev $USER
    ```
 
-### Issue: Build errors about missing target
+## Issue: Build errors about missing target
 
 **Solution**: Add the ARM target
 ```bash
 rustup target add thumbv8m.main-none-eabihf
 ```
 
-### Issue: LED doesn't blink
+## Issue: LED doesn't blink
 
 **Solutions**:
 1. Check the wiring (resistor and polarity)
@@ -274,18 +278,18 @@ rustup target add thumbv8m.main-none-eabihf
 3. Try the built-in LED first (GP16, no wiring needed)
 4. Check if the LED is functional (test with a battery)
 
-### Issue: Linker errors
+## Issue: Linker errors
 
 **Solution**: Install flip-link
 ```bash
 cargo install flip-link
 ```
 
----
+<br>
 
-## 📚 Understanding the Code
+# 📚 Understanding the Code
 
-### What is Embassy?
+## What is Embassy?
 
 Embassy is a modern async framework for embedded Rust. It provides:
 - **Async/await**: Write concurrent code that looks sequential
@@ -293,7 +297,7 @@ Embassy is a modern async framework for embedded Rust. It provides:
 - **Type safety**: Rust's compile-time guarantees for embedded systems
 - **Low power**: Efficient task scheduling and sleep modes
 
-### Why Async?
+## Why Async?
 
 Traditional embedded code uses blocking delays:
 ```rust
@@ -307,7 +311,7 @@ Timer::after_millis(1000).await;  // CPU can do other tasks
 
 This allows multiple tasks to run concurrently on a single core!
 
-### GPIO Basics
+## GPIO Basics
 
 - **Digital Output**: Pin is either HIGH (3.3V) or LOW (0V)
 - **Current Limit**: RP2350 pins source ~12mA max
@@ -316,7 +320,7 @@ This allows multiple tasks to run concurrently on a single core!
   - Desired current: ~10mA
   - Resistor: (3.3V - 2V) / 0.01A = 130Ω (100Ω works fine)
 
-### defmt Logging
+## defmt Logging
 
 `defmt` is a highly efficient logging framework:
 - Zero-cost abstractions
@@ -324,11 +328,11 @@ This allows multiple tasks to run concurrently on a single core!
 - Minimal flash and RAM usage
 - Perfect for embedded systems
 
----
+<br>
 
-## 🎯 Experiments and Modifications
+# 🎯 Experiments and Modifications
 
-### 1. Change Blink Speed
+## 1. Change Blink Speed
 
 Modify the delay values in `main.rs`:
 
@@ -340,7 +344,7 @@ Timer::after_millis(200).await;
 Timer::after_millis(3000).await;
 ```
 
-### 2. Different Blink Pattern
+## 2. Different Blink Pattern
 
 Create an SOS pattern:
 
@@ -372,15 +376,15 @@ for _ in 0..3 {
 Timer::after_millis(2000).await;  // Pause between SOS
 ```
 
-### 3. Use External LED
+## 3. Use External LED
 
 Change the pin in `main.rs`:
 
 ```rust
-let mut led = Output::new(peripherals.PIN_15, Level::Low);
+let mut led = Output::new(peripherals.PIN_16, Level::Low);
 ```
 
-Wire an external LED to GP15.
+Wire an external LED to GP16.
 
 ### 4. Adjust Logging Level
 
@@ -392,18 +396,18 @@ DEFMT_LOG = "debug"  # More verbose
 DEFMT_LOG = "warn"   # Less verbose
 ```
 
----
+<br>
 
-## 🧪 Challenges
+# 🧪 Challenges
 
 1. **Heartbeat Pattern**: Make the LED pulse like a heartbeat
 2. **Multiple Speeds**: Use a pattern that cycles through different blink speeds
 3. **Binary Counter**: Use 4 LEDs to count in binary (preview of Day 7)
 4. **Morse Code**: Transmit your name in Morse code (preview of Day 10)
 
----
+<br>
 
-## 📖 Next Steps
+# 📖 Next Steps
 
 Once you've mastered blinking a single LED, you're ready for:
 
@@ -411,37 +415,31 @@ Once you've mastered blinking a single LED, you're ready for:
 - **DAY003**: Traffic light simulation
 - **DAY004**: LED brightness control with PWM
 
----
+<br>
 
-## 🔗 Resources
+# 🔗 Resources
 
-### Official Documentation
+## Official Documentation
 
 - [Embassy Book](https://embassy.dev/book/)
 - [embassy-rp Documentation](https://docs.embassy.dev/embassy-rp/)
 - [RP2350 Datasheet](https://datasheets.raspberrypi.com/rp2350/rp2350-datasheet.pdf)
 - [Pico 2 Documentation](https://www.raspberrypi.com/documentation/microcontrollers/pico-series.html)
 
-### Rust Embedded
+## Rust Embedded
 
 - [Embedded Rust Book](https://rust-embedded.github.io/book/)
 - [probe-rs Documentation](https://probe.rs/)
 - [defmt Book](https://defmt.ferrous-systems.com/)
 
-### Community
+## Community
 
 - [Embassy GitHub](https://github.com/embassy-rs/embassy)
 - [Rust Embedded Matrix Chat](https://matrix.to/#/#rust-embedded:matrix.org)
 
----
+<br>
 
-## 📄 License
-
-MIT License - Copyright (c) 2025
-
----
-
-## ✅ Completion Checklist
+# ✅ Completion Checklist
 
 - [ ] Hardware assembled correctly
 - [ ] Rust toolchain installed
@@ -453,12 +451,18 @@ MIT License - Copyright (c) 2025
 - [ ] Understood async/await in Embassy
 - [ ] Ready to move to DAY002
 
----
+<br>
 
 **Congratulations!** 🎉 You've completed your first Embassy Rust project on the Pico 2. This simple blink is the foundation for all 365 projects ahead. The skills you learned today—GPIO control, async programming, and the build/flash workflow—will be used throughout this journey.
 
 *"A journey of 365 projects begins with a single blink."* 🦀
 
----
+<br>
 
 **Project Status**: ⭐ Beginner | **Estimated Time**: 30-60 minutes | **Success Rate**: 99%
+
+<br>
+
+# 📄 License
+
+MIT License - Copyright (c) 2025
