@@ -185,8 +185,14 @@ This will:
 2. Flash it to the Pico 2 using probe-rs
 3. Start RTT logging to show debug output
 
-## Expected Output
+### Expected Output
 The LED will blink: ON for 0.5 second, OFF for 0.5 second, repeating forever.
+
+## Step 4: Test
+```bash
+make test
+```
+This will run all of the unittests to ensure our project is functioning correctly and that recent changes haven't introduced regressions.
 
 <br>
 
