@@ -17,16 +17,6 @@ VIDEO PROMO [HERE](https://www.youtube.com/watch?v=aD7X9sXirF8)
 
 ---
 
-## 🧩 Hardware
-### Raspberry Pi Pico 2 w/ Header [BUY](https://www.pishop.us/product/raspberry-pi-pico-2-with-header)
-### USB A-Male to USB Micro-B Cable [BUY](https://www.pishop.us/product/usb-a-male-to-usb-micro-b-cable-6-inches)
-### Raspberry Pi Pico Debug Probe [BUY](https://www.pishop.us/product/raspberry-pi-debug-probe)
-### Complete Component Kit for Raspberry Pi [BUY](https://www.pishop.us/product/complete-component-kit-for-raspberry-pi)
-### 10pc 25v 1000uF Capacitor [BUY](https://www.amazon.com/Cionyce-Capacitor-Electrolytic-CapacitorsMicrowave/dp/B0B63CCQ2N?th=1)
-#### 10% PiShop DISCOUNT CODE - KVPE_HS320548_10PC
-
----
-
 ## 📋 Project Overview
 
 This is the first project in the **365 Pico2 RP2350 Project Ideas** series. We're implementing the classic "Hello World" of embedded systems: blinking an LED. This simple project introduces you to Embassy Rust on the Raspberry Pi Pico 2 and establishes the foundation for all future projects.
@@ -39,6 +29,16 @@ This is the first project in the **365 Pico2 RP2350 Project Ideas** series. We'r
 - Understanding the embedded development workflow
 - Using defmt for efficient embedded logging
 - Working with probe-rs for flashing and debugging
+
+---
+
+## 🧩 Hardware
+### Raspberry Pi Pico 2 w/ Header [BUY](https://www.pishop.us/product/raspberry-pi-pico-2-with-header)
+### USB A-Male to USB Micro-B Cable [BUY](https://www.pishop.us/product/usb-a-male-to-usb-micro-b-cable-6-inches)
+### Raspberry Pi Pico Debug Probe [BUY](https://www.pishop.us/product/raspberry-pi-debug-probe)
+### Complete Component Kit for Raspberry Pi [BUY](https://www.pishop.us/product/complete-component-kit-for-raspberry-pi)
+### 10pc 25v 1000uF Capacitor [BUY](https://www.amazon.com/Cionyce-Capacitor-Electrolytic-CapacitorsMicrowave/dp/B0B63CCQ2N?th=1)
+#### 10% PiShop DISCOUNT CODE - KVPE_HS320548_10PC
 
 ---
 
