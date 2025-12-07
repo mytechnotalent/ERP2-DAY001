@@ -5,7 +5,7 @@ VIDEO PROMO [HERE](https://www.youtube.com/watch?v=aD7X9sXirF8)
 
 <br>
 
-# DAY001: The First Blink ⭐
+# ⭐ DAY001: The First Blink
 
 <br>
 
