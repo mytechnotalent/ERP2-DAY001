@@ -76,7 +76,7 @@ This is the first project in the **365 Pico2 RP2350 Project Ideas** series. We'r
                              └─────────┘
 
 Connection Steps:
-1. GP16 (Pin 25) → 100Ω Resistor → LED Anode (longer leg, +)
+1. GP16 (Pin 16) → 100Ω Resistor → LED Anode (longer leg, +)
 2. LED Cathode (shorter leg, -) → GND
 
 Note: The Pico 2 has a built-in LED on GP16, so you can skip
