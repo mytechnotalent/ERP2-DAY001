@@ -17,7 +17,7 @@ VIDEO PROMO [HERE](https://www.youtube.com/watch?v=aD7X9sXirF8)
 
 ---
 
-## 🔧 Hardware
+## 🧩 Hardware
 ### Raspberry Pi Pico 2 w/ Header [BUY](https://www.pishop.us/product/raspberry-pi-pico-2-with-header)
 ### USB A-Male to USB Micro-B Cable [BUY](https://www.pishop.us/product/usb-a-male-to-usb-micro-b-cable-6-inches)
 ### Raspberry Pi Pico Debug Probe [BUY](https://www.pishop.us/product/raspberry-pi-debug-probe)
