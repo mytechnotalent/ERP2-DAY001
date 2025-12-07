@@ -12,6 +12,9 @@ VIDEO PROMO [HERE](https://www.youtube.com/watch?v=aD7X9sXirF8)
 **Components**: LED, Resistor  
 **Concepts**: GPIO, Digital Output, Async Programming
 
+## 🔋 Schematic
+![image](https://github.com/mytechnotalent/Embedded-Hacking/blob/main/EHP2_bb.png?raw=true)
+
 ---
 
 ## 📋 Project Overview
