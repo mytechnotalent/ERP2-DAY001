@@ -161,7 +161,7 @@ async fn main(_spawner: Spawner) {
 
 <br>
 
-# 🚀 Building and Flashing
+# 🚀 Building, Flashing and Testing
 
 ## Step 1: Connect the Pico 2
 1. Hold the **BOOTSEL** button on the Pico 2
