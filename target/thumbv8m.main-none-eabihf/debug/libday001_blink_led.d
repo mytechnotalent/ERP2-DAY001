@@ -1,0 +1,1 @@
+/Users/kevinthomas/Documents/tuts/DAY001/target/thumbv8m.main-none-eabihf/debug/libday001_blink_led.rlib: /Users/kevinthomas/Documents/tuts/DAY001/build.rs /Users/kevinthomas/Documents/tuts/DAY001/memory.x /Users/kevinthomas/Documents/tuts/DAY001/src/config.rs /Users/kevinthomas/Documents/tuts/DAY001/src/led.rs /Users/kevinthomas/Documents/tuts/DAY001/src/lib.rs

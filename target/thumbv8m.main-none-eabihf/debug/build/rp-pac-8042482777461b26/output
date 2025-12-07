@@ -1,0 +1,3 @@
+cargo:rustc-link-search=/Users/kevinthomas/Documents/tuts/DAY001/target/thumbv8m.main-none-eabihf/debug/build/rp-pac-8042482777461b26/out
+cargo:rerun-if-changed=device.x
+cargo:rerun-if-changed=build.rs

@@ -1,0 +1,2 @@
+cargo:rustc-link-search=/Users/kevinthomas/Documents/tuts/DAY001/target/thumbv8m.main-none-eabihf/debug/build/day001-blink-led-e14f78b81789a03f/out
+cargo:rerun-if-changed=memory.x
